@@ -51,15 +51,6 @@ if (!defined('ABSPATH')) {
                         img_print_picture_tag(img: $image, max_size: "medium", alt_text: get_bloginfo('name'), is_priority: true);
                     }
                     ?>
-
-                    <div class="site-logo__symbol">
-                        <?php
-                        $options = get_field_options("options");
-                        if ($options["logo_symbol"]) {
-                            img_print_picture_tag(img: $options["logo_symbol"], max_size: "medium", min_size: "medium");
-                        }
-                        ?>
-                    </div>
                     <span>Site Logo</span>
                 </a>
             </div>
@@ -113,51 +104,22 @@ if (!defined('ABSPATH')) {
                     </nav>
                 <?php endif ?>
 
-                <?php if ($phone_number): ?>
-                    <div class="site-header__callout">
-
-                        <div class="callout">
-                            <?php if (!empty(get_languages_map())): ?>
-                                <div class="callout__languages">
-                                    <a href="<?= get_site_url() ?>" class="language" aria-label="Select English language">
-                                        EN
-                                    </a>
-                                    <?php foreach (get_languages_map() as $lang => $data): ?>
-                                        <a href="<?= get_site_url() . '/' . $lang ?>" class="language" aria-label="<?= 'Select ' . esc_attr($lang) . ' language' ?>">
-                                            <?= $lang ?>
-                                        </a>
-                                    <?php endforeach; ?>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if ($top_callout_first_line): ?>
-                                <span><?= $top_callout_first_line ?></span>
-                            <?php endif; ?>
-                            <?php if ($top_callout_second_line): ?>
-                                <span><?= $top_callout_second_line ?></span>
-                            <?php endif; ?>
-                            <a href="tel:+1<?= get_flat_number($phone_number) ?>" class="callout__phone" aria-label="Call us at <?= esc_attr($phone_number) ?>">
-                                <?php include(get_template_directory() . "/assets/icons/icon-phone.svg") ?>
-                                <?= $phone_number ?>
-                            </a>
-                        </div>
-
-                    </div>
-                <?php endif; ?>
             </div>
 
-            <?php if ($cta_button): ?>
-                <div class="site-header__cta">
-                    <a href="<?= $cta_button['url'] ?>" class="cta-button btn btn--tertiary" target="<?= $cta_button['target'] ?>" aria-label="<?= esc_attr($cta_button['title']) ?>">
+            <?php if ($phone_number): ?>
+                <div class="site-header__callout">
+                        <?php if ($top_callout): ?>
+                            <span class="text"><?= $top_callout ?></span>
+                        <?php endif; ?>
 
-                        <span class="cta-button__text">
-                            <?= $cta_button['title'] ?>
-                        </span>
-
-                    </a>
+                        <a href="tel:+1<?= get_flat_number($phone_number) ?>" class="phone btn btn--primary" aria-label="Call us at <?= esc_attr($phone_number) ?>">
+                            <?php include(get_template_directory() . "/assets/icons/icon-phone.svg") ?>
+                            <span>
+                                <?= $phone_number ?>
+                            </span>
+                        </a>
                 </div>
             <?php endif; ?>
-
         </div>
     </header>
 

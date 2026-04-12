@@ -1,90 +1,83 @@
-/* roboto-serif-300 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Roboto Serif";
-  font-style: normal;
-  font-weight: 300;
-  src: url("../../../fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-300.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* roboto-serif-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Roboto Serif";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../../../fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-regular.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* roboto-serif-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Roboto Serif";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../../../fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-500.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* roboto-serif-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Roboto Serif";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../../../fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-600.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* roboto-serif-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Roboto Serif";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../../../fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-700.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
+/* CRITICAL FONTS - Use swap */
+/* OPTIONAL FONTS - Use optional */
 
-/* mona-sans-regular - latin */
+/* khand-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Mona Sans";
+  font-family: 'Khand';
   font-style: normal;
   font-weight: 400;
-  src: url("../../../fonts/mona-sans-v4-latin/mona-sans-v4-latin-regular.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../../../fonts/khand-v22-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* mona-sans-500 - latin */
+/* khand-500 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Mona Sans";
+  font-family: 'Khand';
   font-style: normal;
   font-weight: 500;
-  src: url("../../../fonts/mona-sans-v4-latin/mona-sans-v4-latin-regular.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../../../fonts/khand-v22-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* mona-sans-600 - latin */
+/* khand-600 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Mona Sans";
+  font-family: 'Khand';
   font-style: normal;
   font-weight: 600;
-  src: url("../../../fonts/mona-sans-v4-latin/mona-sans-v4-latin-600.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../../../fonts/khand-v22-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* mona-sans-700 - latin */
+/* khand-700 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Mona Sans";
+  font-family: 'Khand';
   font-style: normal;
   font-weight: 700;
-  src: url("../../../fonts/mona-sans-v4-latin/mona-sans-v4-latin-700.woff2")
-    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../../../fonts/khand-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../fonts/figtree-v9-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../../../fonts/figtree-v9-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../../fonts/figtree-v9-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../../fonts/figtree-v9-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../../fonts/figtree-v9-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 // Asegurar que las fuentes estén disponibles en el iframe
 body#tinymce,
 .mce-content-body {
-  font-family: "Mona Sans", sans-serif;
+  font-family: "Khand", sans-serif;
 }
 
 // TinyMCE necesita que estas familias estén definidas para poder aplicarlas
@@ -96,31 +89,31 @@ h3,
 h4,
 h5,
 h6 {
-  &[style*="font-family: roboto serif"] {
-    font-family: "Roboto Serif", serif !important;
+  &[style*="font-family: Figtree"] {
+    font-family: "Figtree", serif !important;
   }
 
-  &[style*="font-family: mona sans"] {
-    font-family: "Mona Sans", sans-serif !important;
+  &[style*="font-family: Khand"] {
+    font-family: "Khand", sans-serif !important;
   }
 }
 
 // Soporte directo para cuando TinyMCE aplica inline styles
-*[style*="font-family: roboto serif"],
-*[style*="font-family: 'roboto serif'"] {
-  font-family: "Roboto Serif", serif !important;
+*[style*="font-family: Figtree"],
+*[style*="font-family: 'Figtree'"] {
+  font-family: "Figtree", serif !important;
 }
 
-*[style*="font-family: mona sans"],
-*[style*="font-family: 'mona sans'"] {
-  font-family: "Mona Sans", sans-serif !important;
+*[style*="font-family: Khand"],
+*[style*="font-family: 'Khand'"] {
+  font-family: "Khand", sans-serif !important;
 }
 
 // Clases auxiliares (opcional)
-.mona-sans {
-  font-family: "Mona Sans", sans-serif;
+.khand {
+  font-family: "Khand", sans-serif;
 }
 
-.roboto-serif {
-  font-family: "Roboto Serif", serif;
+.figtree {
+  font-family: "Figtree", serif;
 }

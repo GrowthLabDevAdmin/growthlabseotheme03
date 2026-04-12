@@ -49,7 +49,7 @@ add_filter('mce_css', 'my_acf_editor_styles');
 if (!function_exists('my_acf_wysiwyg_custom_settings')) {
     function my_acf_wysiwyg_custom_settings($init)
     {
-        $init['font_formats']     = 'Mona Sans=Mona Sans,sans-serif;Roboto Serif=Roboto Serif,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
+        $init['font_formats']     = 'Khand=Khand,sans-serif;Figtree=Figtree,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
         $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 48px';
         return $init;
     }
@@ -60,7 +60,7 @@ add_filter('tiny_mce_before_init', 'my_acf_wysiwyg_custom_settings', 1);
 if (!function_exists('my_acf_tinymce_settings')) {
     function my_acf_tinymce_settings($init, $id)
     {
-        $init['font_formats']     = 'Mona Sans=Mona Sans,sans-serif;Roboto Serif=Roboto Serif,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
+        $init['font_formats']     = 'Khand=Khand,sans-serif;Figtree=Figtree,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
         $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 48px';
         return $init;
     }
@@ -136,16 +136,16 @@ if (!function_exists('my_wp_editor_formats')) {
         add_editor_style(get_template_directory_uri() . '/styles/vendor/tiny-mce/tiny-mce-styles-min.css?ver=' . time());
 
         add_theme_support('editor-color-palette', [
-            ['name' => __('Primary Color',         'growthlabseotheme02'), 'slug' => 'primary',        'color' => sanitize_hex_color(get_theme_mod('primary_color',         '#15253f')) ?: '#15253f'],
-            ['name' => __('Primary Dark',          'growthlabseotheme02'), 'slug' => 'primary-dark',   'color' => sanitize_hex_color(get_theme_mod('primary_color_dark',    '#08182f')) ?: '#08182f'],
-            ['name' => __('Primary Light',         'growthlabseotheme02'), 'slug' => 'primary-light',  'color' => sanitize_hex_color(get_theme_mod('primary_color_light',   '#2C3D5B')) ?: '#2C3D5B'],
-            ['name' => __('Secondary Color',       'growthlabseotheme02'), 'slug' => 'secondary',      'color' => sanitize_hex_color(get_theme_mod('secondary_color',       '#F4F3EE')) ?: '#F4F3EE'],
-            ['name' => __('Secondary Dark',        'growthlabseotheme02'), 'slug' => 'secondary-dark', 'color' => sanitize_hex_color(get_theme_mod('secondary_color_dark',  '#E7E5DF')) ?: '#E7E5DF'],
-            ['name' => __('Secondary Light',       'growthlabseotheme02'), 'slug' => 'secondary-light', 'color' => sanitize_hex_color(get_theme_mod('secondary_color_light', '#FFFFFF')) ?: '#FFFFFF'],
-            ['name' => __('Tertiary Color',        'growthlabseotheme02'), 'slug' => 'tertiary',       'color' => sanitize_hex_color(get_theme_mod('tertiary_color',        '#BC9061')) ?: '#BC9061'],
-            ['name' => __('Tertiary Dark',         'growthlabseotheme02'), 'slug' => 'tertiary-dark',  'color' => sanitize_hex_color(get_theme_mod('tertiary_color_dark',   '#9D7A55')) ?: '#9D7A55'],
-            ['name' => __('Tertiary Light',        'growthlabseotheme02'), 'slug' => 'tertiary-light', 'color' => sanitize_hex_color(get_theme_mod('tertiary_color_light',  '#DCAB77')) ?: '#DCAB77'],
-            ['name' => __('Text Color',            'growthlabseotheme02'), 'slug' => 'text',           'color' => sanitize_hex_color(get_theme_mod('text_color',            '#15253f')) ?: '#15253f'],
+            ['name' => __('Primary Color',         'growthlabseotheme03'), 'slug' => 'primary',        'color' => sanitize_hex_color(get_theme_mod('primary_color',         '#15253f')) ?: '#15253f'],
+            ['name' => __('Primary Dark',          'growthlabseotheme03'), 'slug' => 'primary-dark',   'color' => sanitize_hex_color(get_theme_mod('primary_color_dark',    '#08182f')) ?: '#08182f'],
+            ['name' => __('Primary Light',         'growthlabseotheme03'), 'slug' => 'primary-light',  'color' => sanitize_hex_color(get_theme_mod('primary_color_light',   '#2C3D5B')) ?: '#2C3D5B'],
+            ['name' => __('Secondary Color',       'growthlabseotheme03'), 'slug' => 'secondary',      'color' => sanitize_hex_color(get_theme_mod('secondary_color',       '#F4F3EE')) ?: '#F4F3EE'],
+            ['name' => __('Secondary Dark',        'growthlabseotheme03'), 'slug' => 'secondary-dark', 'color' => sanitize_hex_color(get_theme_mod('secondary_color_dark',  '#E7E5DF')) ?: '#E7E5DF'],
+            ['name' => __('Secondary Light',       'growthlabseotheme03'), 'slug' => 'secondary-light', 'color' => sanitize_hex_color(get_theme_mod('secondary_color_light', '#FFFFFF')) ?: '#FFFFFF'],
+            ['name' => __('Tertiary Color',        'growthlabseotheme03'), 'slug' => 'tertiary',       'color' => sanitize_hex_color(get_theme_mod('tertiary_color',        '#BC9061')) ?: '#BC9061'],
+            ['name' => __('Tertiary Dark',         'growthlabseotheme03'), 'slug' => 'tertiary-dark',  'color' => sanitize_hex_color(get_theme_mod('tertiary_color_dark',   '#9D7A55')) ?: '#9D7A55'],
+            ['name' => __('Tertiary Light',        'growthlabseotheme03'), 'slug' => 'tertiary-light', 'color' => sanitize_hex_color(get_theme_mod('tertiary_color_light',  '#DCAB77')) ?: '#DCAB77'],
+            ['name' => __('Text Color',            'growthlabseotheme03'), 'slug' => 'text',           'color' => sanitize_hex_color(get_theme_mod('text_color',            '#15253f')) ?: '#15253f'],
         ]);
     }
 }
@@ -155,7 +155,7 @@ add_action('after_setup_theme', 'my_wp_editor_formats');
 if (!function_exists('my_wp_editor_default_settings')) {
     function my_wp_editor_default_settings($init)
     {
-        $init['font_formats']     = 'Mona Sans=Mona Sans,sans-serif;Roboto Serif=Roboto Serif,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
+        $init['font_formats']     = 'Khand=Khand,sans-serif;Figtree=Figtree,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
         $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 48px';
         $init['toolbar1']         = 'formatselect,fontselect,fontsizeselect,bold,italic,underline,forecolor,backcolor,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,removeformat,undo,redo';
         $init['toolbar2']         = '';

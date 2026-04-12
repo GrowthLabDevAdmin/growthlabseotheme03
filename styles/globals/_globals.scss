@@ -30,7 +30,7 @@ body {
   position: relative;
   font-size: 1.6rem;
   line-height: 1.5;
-  font-family: var(--font-sans);
+  font-family: var(--font-titles);
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -72,7 +72,7 @@ h6 *,
 .h6 * {
   margin: 0;
   margin-bottom: 2rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-content);
   color: rgba(var(--primary));
   font-weight: 600;
   line-height: 1.5;
@@ -138,7 +138,7 @@ h6 * {
 /*Links*/
 a {
   text-decoration: none;
-  font-family: var(--font-sans);
+  font-family: var(--font-titles);
   color: rgb(var(--tertiary));
   font-size: 1.6rem;
   font-weight: 400;
@@ -170,7 +170,7 @@ li a {
 li {
   p,
   span {
-    font-family: var(--font-sans);
+    font-family: var(--font-titles);
     color: rgb(var(--text));
     font-size: 1.6rem;
     font-weight: 400;
@@ -180,7 +180,7 @@ li {
 
 /* Paragraphs */
 p {
-  font-family: var(--font-sans);
+  font-family: var(--font-titles);
   color: rgb(var(--text));
   font-size: clamp(1.5rem, 1.7vw, 1.8rem);
   font-weight: 400;
@@ -194,7 +194,7 @@ p {
   margin: 0 auto;
 }
 
-.bg-gradient {
+.nice-bg {
   position: relative;
   // Background base idéntico al loaded, sin la imagen
   background: linear-gradient(
@@ -230,7 +230,7 @@ p {
     }
   }
 
-  .bg-gradient {
+  .nice-bg {
     background: none;
     &::after {
       content: none;
@@ -334,7 +334,7 @@ img.bg-image {
 
 :where(.formatted-text) {
   font-size: clamp(1.4rem, 2.2vw, 1.8rem);
-  font-family: var(--font-sans);
+  font-family: var(--font-titles);
   font-weight: 400;
   line-height: 1.5;
   color: rgba(var(--text), 1);
@@ -439,18 +439,29 @@ img.bg-image {
 /* Buttons */
 .btn {
   min-width: fit-content;
-  padding: 1.6rem 2.4rem;
+  padding: 1.4rem 2rem;
+  position: relative;
   display: inline-block;
-  border-radius: 38px;
   transition: 0.3s linear;
 
   &:hover {
     cursor: pointer;
   }
 
+  &::before {
+    content: "";
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+    display: block;
+  }
+
   & > * {
-    font-family: var(--font-sans);
-    font-size: clamp(1.6rem, 2.2vw, 2rem);
+    font-family: var(--font-content);
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem);
     line-height: 1.5;
     font-weight: 700;
     letter-spacing: 0.45px;
@@ -462,15 +473,40 @@ img.bg-image {
   }
 
   &--primary {
+    @extend .btn;
     background: rgb(var(--primary));
-    border: 1px solid rgb(var(--tertiary));
+
+    &:hover {
+      background: rgb(var(--tertiary));
+    }
+
+    &::before {
+      background:
+        linear-gradient(rgba(var(--primary-dark)) 31%),
+        rgb(var(var(--secondary-light)));
+    }
 
     span {
       color: rgb(var(--secondary-light));
     }
+  }
+
+  &--primary-dark {
+    @extend .btn;
+    background: rgb(var(--primary-dark));
 
     &:hover {
-      background: rgb(var(--primary-light));
+      background: rgb(var(--tertiary));
+    }
+
+    &::before {
+      background:
+        linear-gradient(rgba(var(--primary-dark)) 31%),
+        rgb(var(var(--secondary-light)));
+    }
+
+    span {
+      color: rgb(var(--secondary-light));
     }
   }
 
@@ -488,29 +524,20 @@ img.bg-image {
   }
 
   &--tertiary {
-    background: linear-gradient(
-      180deg,
-      rgb(var(--tertiary-dark)) 0%,
-      rgb(var(--tertiary-light)) 50%,
-      rgb(var(--tertiary-dark)) 100%
-    );
-    border: 1px solid rgb(var(--tertiary));
+    background: rgb(var(--tertiary));
+
+    &::before {
+      background:
+        linear-gradient(rgba(var(--primary-dark)) 31%),
+        rgb(var(var(--secondary-light)));
+    }
 
     span {
-      color: rgb(var(--primary-dark));
+      color: rgb(var(--secondary-light));
     }
 
     &:hover {
-      background: linear-gradient(
-        180deg,
-        rgb(var(--primary-dark)) 0%,
-        rgb(var(--primary-light)) 50%,
-        rgb(var(--primary-dark)) 100%
-      );
-
-      span {
-        color: rgb(var(--secondary-light));
-      }
+      background: rgb(var(--tertiary-light));
     }
   }
 

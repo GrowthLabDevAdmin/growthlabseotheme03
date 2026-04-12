@@ -123,16 +123,14 @@ add_action('wp_head', function () {
     $theme_uri = get_template_directory_uri();
 
     $fonts = array(
-        // Roboto Serif fonts
-        'fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-regular.woff2',
-        'fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-100.woff2',
-        'fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-500.woff2',
-        'fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-600.woff2',
-        'fonts/roboto-serif-v17-latin/roboto-serif-v17-latin-700.woff2',
-        // Mona Sans fonts
-        'fonts/mona-sans-v4-latin/mona-sans-v4-latin-regular.woff2',
-        'fonts/mona-sans-v4-latin/mona-sans-v4-latin-600.woff2',
-        'fonts/mona-sans-v4-latin/mona-sans-v4-latin-700.woff2',
+        // Figtree fonts
+        'fonts/figtree-v9-latin-regular.woff2',
+        'fonts/figtree-v9-latin-500.woff2',
+        'fonts/figtree-v9-latin-700.woff2',
+        // Khand fonts
+        'fonts/khand-v22-latin-regular.woff2',
+        'fonts/khand-v22-latin-500.woff2',
+        'fonts/khand-v22-latin-600.woff2',
     );
 
     foreach ($fonts as $font) {
