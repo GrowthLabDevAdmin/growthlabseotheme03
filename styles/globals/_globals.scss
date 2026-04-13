@@ -481,9 +481,10 @@ img.bg-image {
     }
 
     &::before {
-      background:
-        linear-gradient(rgba(var(--primary-dark)) 31%),
-        rgb(var(var(--secondary-light)));
+      background: linear-gradient(
+        rgba(var(--primary-dark)) 31%,
+        rgb(var(--secondary-light))
+      );
     }
 
     span {
@@ -500,9 +501,10 @@ img.bg-image {
     }
 
     &::before {
-      background:
-        linear-gradient(rgba(var(--primary-dark)) 31%),
-        rgb(var(var(--secondary-light)));
+      background: linear-gradient(
+        rgba(var(--primary-dark)) 31%,
+        rgb(var(--secondary-light))
+      );
     }
 
     span {

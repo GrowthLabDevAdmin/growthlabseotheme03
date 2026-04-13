@@ -94,7 +94,7 @@ if (!defined('ABSPATH')) {
 
                 <?php if (!empty($menu_args)) : ?>
 
-                    <div class="site-header__close-btn hide-on-desktop" role="button" aria-label="Close Menu Button">
+                    <div class="site-header__close-btn" role="button" aria-label="Close Menu Button">
                         <hr>
                         <hr>
                     </div>

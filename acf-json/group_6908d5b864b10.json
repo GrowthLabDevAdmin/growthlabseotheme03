@@ -300,6 +300,11 @@
                                 "field": "field_6908d895c0fe4",
                                 "operator": "!=",
                                 "value": "home_2"
+                            },
+                            {
+                                "field": "field_6908d895c0fe4",
+                                "operator": "!=",
+                                "value": "home"
                             }
                         ]
                     ],
@@ -334,6 +339,11 @@
                                 "field": "field_6908d895c0fe4",
                                 "operator": "!=",
                                 "value": "home_2"
+                            },
+                            {
+                                "field": "field_6908d895c0fe4",
+                                "operator": "!=",
+                                "value": "home"
                             }
                         ]
                     ],
@@ -367,7 +377,7 @@
                     "label": "Hero Title",
                     "name": "hero_title",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -377,45 +387,11 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_6908d679c0fdd",
-                    "label": "Hero Title Tag",
-                    "name": "hero_title_tag",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "h1": "h1",
-                        "h2": "h2",
-                        "h3": "h3",
-                        "h4": "h4",
-                        "h5": "h5",
-                        "h6": "h6",
-                        "p": "p"
-                    },
-                    "default_value": "p",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_6908dcdac0fe6",
@@ -548,6 +524,35 @@
                     "allow_in_bindings": 0
                 },
                 {
+                    "key": "field_69dc849435fd5",
+                    "label": "Trust Badge Text",
+                    "name": "trust_badge_text",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6908d895c0fe4",
+                                "operator": "==",
+                                "value": "home"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
                     "key": "field_6908d6a6c0fdf",
                     "label": "Hero Pictures",
                     "name": "hero_pictures",
@@ -654,7 +659,7 @@
                                     {
                                         "field": "field_6908d895c0fe4",
                                         "operator": "==",
-                                        "value": "home"
+                                        "value": "home_6"
                                     }
                                 ],
                                 [
@@ -662,13 +667,6 @@
                                         "field": "field_6908d895c0fe4",
                                         "operator": "==",
                                         "value": "home_4"
-                                    }
-                                ],
-                                [
-                                    {
-                                        "field": "field_6908d895c0fe4",
-                                        "operator": "==",
-                                        "value": "home_6"
                                     }
                                 ]
                             ],
@@ -1055,5 +1053,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1775717070
+    "modified": 1776059588
 }

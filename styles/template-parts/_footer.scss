@@ -11,7 +11,26 @@ main:has(+ .site-footer .contact-form-footer) {
   position: relative;
   z-index: 5;
   overflow: visible;
-  background-color: transparent;
+  background-color: rgb(var(--tertiary));
+  background-image:
+    /* Luz central difusa */
+    radial-gradient(
+      ellipse 80% 60% at 50% 60%,
+      rgb(var(--primary-dark)) 0%,
+      transparent 70%
+    ),
+    /* Esquina superior izquierda más oscura */
+    radial-gradient(
+      ellipse 50% 50% at 0% 0%,
+      rgb(var(--tertiary)) 0%,
+      transparent 60%
+    ),
+    /* Esquina superior derecha más oscura */
+    radial-gradient(
+      ellipse 50% 50% at 100% 0%,
+      rgb(var(--tertiary)) 0%,
+      transparent 60%
+    );
 
   //Footer Form Section
   .contact-form-footer {
