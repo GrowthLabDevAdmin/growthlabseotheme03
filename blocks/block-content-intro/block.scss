@@ -14,7 +14,8 @@
 
   $parent: &;
 
-  &.dark {
+  &.dark,
+  &.image {
     background-color: rgba(var(--tertiary));
 
     *:not(a) {
