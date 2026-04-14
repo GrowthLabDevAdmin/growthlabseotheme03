@@ -95,6 +95,7 @@
     min-height: 100vh;
     padding-bottom: 15rem;
     position: relative;
+    z-index: 5;
     overflow: visible;
     content-visibility: visible;
     border-bottom: none;
@@ -144,10 +145,14 @@
         167deg,
         rgba(var(--primary-dark)) 0%,
         rgba(var(--primary)) 70%,
-        rgba(var(--primary-dark)) 20%,
-        rgba(var(--tertiary-dark)) 100%
+        rgba(var(--tertiary)) 20%,
+        rgba(var(--tertiary)) 100%
       );
       clip-path: polygon(0 100%, 100% 0%, 100% 100%);
+    }
+
+    & + * {
+      padding-top: var(--sp-lg);
     }
 
     /* #{$hero}__wrapper {
@@ -199,7 +204,7 @@
       justify-content: space-evenly;
 
       @media (min-width: v.$tablet) {
-        right: calc(18% - 10rem);
+        right: calc(20% - 10rem);
       }
 
       img {

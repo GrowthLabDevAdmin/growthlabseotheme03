@@ -9,22 +9,13 @@ if (get_field('toggle_block')):
 
     <section
         id="<?= $block_id ?? "" ?>"
-        class="block logos-carousel"
+        class="block logos-carousel <?= isset($background_type) && $background_type ? $background_type : 'dark' ?>"
         <?php
         if (isset($extract_block_from_content) && $extract_block_from_content) echo "data-extract='$place'";
         ?>>
 
-        <?php
-        if (isset($side_image) && $side_image) img_print_picture_tag(
-            img: $side_image,
-            max_size: "cover-mobile",
-            min_size: "featured-small",
-            classes: "logos-carousel__image"
-        );
-        ?>
-
-        <div class="logos-carousel__wrapper container tx-center">
-            <?php print_title($title, $title_tag, "logos-carousel__title") ?>
+        <div class="logos-carousel__wrapper tx-center">
+            <?php print_title($title, $title_tag, "logos-carousel__title tx-center") ?>
 
             <?php
             if (!empty($logos)):

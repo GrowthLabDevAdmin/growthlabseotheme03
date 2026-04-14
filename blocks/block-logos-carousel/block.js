@@ -59,7 +59,7 @@ if (!window.loadSplide) {
             perPage: inSidebar ? 2 : 3,
           },
           [ldpi]: {
-            perPage: inSidebar ? 3 : 5,
+            perPage: inSidebar ? 3 : 6,
             pagination: false,
           },
         },

@@ -118,6 +118,35 @@
             "ui": 1
         },
         {
+            "key": "field_69dd830deee82",
+            "label": "Background Type",
+            "name": "background_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "light": "Light",
+                "dark": "Dark"
+            },
+            "default_value": "dark",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
             "key": "field_690bd0c4fc63d",
             "label": "Place",
             "name": "place",
@@ -155,32 +184,6 @@
             "allow_in_bindings": 0,
             "layout": "horizontal",
             "save_other_choice": 0
-        },
-        {
-            "key": "field_698bd517ef657",
-            "label": "Side Image",
-            "name": "side_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
         },
         {
             "key": "field_690bd1c8fc641",
@@ -352,5 +355,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1775717070
+    "modified": 1776124751
 }
