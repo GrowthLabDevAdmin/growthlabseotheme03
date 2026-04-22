@@ -108,7 +108,7 @@ if (get_field('toggle_block')):
                                     switch ($carousel_type) {
                                         case 'case-result':
                                             get_template_part('template-parts/result', 'card', array(
-                                                "classes" => "splide__slide posts-carousel__card",
+                                                "classes" => "splide__slide posts-carousel__card " . (isset($background_type) && $background_type ? $background_type : 'light'),
                                                 "numerical_amount" => $numerical_amount,
                                                 "case_title" => $case_title,
                                             ));
@@ -116,7 +116,7 @@ if (get_field('toggle_block')):
 
                                         case 'team':
                                             get_template_part('template-parts/team', 'card', array(
-                                                "classes" => "splide__slide posts-carousel__card",
+                                                "classes" => "splide__slide posts-carousel__card " . (isset($background_type) && $background_type ? $background_type : 'light'),
                                                 "picture" => $headshot,
                                                 "title" => get_the_title(),
                                                 "content" => get_the_excerpt(),
@@ -127,7 +127,7 @@ if (get_field('toggle_block')):
 
                                         case 'post':
                                             get_template_part('template-parts/post', 'card', array(
-                                                "classes" => "splide__slide posts-carousel__card",
+                                                "classes" => "splide__slide posts-carousel__card " . (isset($background_type) && $background_type ? $background_type : 'light'),
                                                 "picture" => get_the_post_thumbnail_url(),
                                                 "meta" => get_the_date(),
                                                 "title" => get_the_title(),
@@ -139,7 +139,7 @@ if (get_field('toggle_block')):
 
                                         case 'testimonial':
                                             get_template_part('template-parts/testimonial', 'card', array(
-                                                "classes" => "splide__slide posts-carousel__card",
+                                                "classes" => "splide__slide posts-carousel__card " . (isset($background_type) && $background_type ? $background_type : 'light'),
                                                 "author" => $author_name,
                                                 "role" => $author_role,
                                                 "content" => $testimonial_content,
@@ -148,7 +148,7 @@ if (get_field('toggle_block')):
 
                                         default:
                                             get_template_part('template-parts/default', 'card', array(
-                                                "classes" => "splide__slide posts-carousel__card",
+                                                "classes" => "splide__slide posts-carousel__card " . (isset($background_type) && $background_type ? $background_type : 'light'),
                                                 "picture" => get_the_post_thumbnail_url(),
                                                 "title" => get_the_title(),
                                                 "link_url" => get_the_permalink(),

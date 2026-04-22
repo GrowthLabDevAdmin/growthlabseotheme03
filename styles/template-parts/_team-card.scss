@@ -7,7 +7,14 @@
 
   $card: &;
 
-  @media (min-width: v.$ldpi) {
+  &.dark {
+    #{$card}__title {
+      color: rgb(var(--primary));
+    }
+    
+    #{$card}__content {
+      color: rgb(var(--secondary-light));
+    }
   }
 
   &__wrapper {
@@ -34,7 +41,7 @@
     aspect-ratio: 4/2;
     position: relative;
     display: flex;
-    
+
     @media (min-width: v.$tablet) {
       width: 60%;
       aspect-ratio: 4/3;
