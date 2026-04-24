@@ -120,8 +120,10 @@ if (!function_exists('growthlabseotheme03_setup')) {
                 'large'        => __('Grande'),
                 'full'         => __('Tamaño completo'),
                 'cover-desktop'  => __('Cover Desktop (1920×1080)'),
-                'cover-tablet'   => __('Cover Tablet (1280×600)'),
+                'cover-tablet'   => __('Cover Tablet (1280x960)'),
                 'cover-mobile'   => __('Cover Mobile (768×432)'),
+                'cover-tablet-portrait'   => __('Cover Tablet (960x1280)'),
+                'cover-mobile-portrait'   => __('Cover Mobile (768×1100)'),
                 'content'   => __('Contenido (800×600)'),
                 'featured-small' => __('Featured Small (480×360)'),
             ], $sizes);
