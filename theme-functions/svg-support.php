@@ -53,7 +53,7 @@ function wp_check_svg($file)
 add_filter('wp_handle_upload_prefilter', 'wp_check_svg');
 
 // Image to SVG
-function image_to_svg($image, $classes = "")
+function image_to_svg($image, $classes = '')
 {
     if (empty($image) || !isset($image['url'], $image['mime_type'])) {
         return '';
@@ -98,7 +98,7 @@ function image_to_svg($image, $classes = "")
             }
 
 
-            if ($classes !== "") return "<div class='$classes'>$svg_content</div>";
+            if ($classes !== '') echo "<div class='$classes'>$svg_content</div>";
             return $svg_content;
         }
 
