@@ -149,7 +149,9 @@
 
           svg {
             path {
-              fill: rgb(var(--secondary), 0.2);
+              fill: rgb(var(--secondary-light), 0.5);
+              filter: brightness(0) invert(1)
+                drop-shadow(1px 1px 1px rgba(0, 0, 0, 1));
             }
           }
         }
