@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     if (isset($args['picture']) && $args['picture'] && $args['picture'] !== '') {
         img_print_picture_tag(img: $args["picture"], max_size: "cover-mobile", min_size: "featured-small", classes: "default-card__pic");
     } elseif (get_field_options("options")["posts_default_image"] && !empty(get_field_options("options")["posts_default_image"])) {
-        img_print_picture_tag(img: get_field_options("options")["posts_default_image"], max_size: "content", min_size: "featured-small", classes: "post-card__pic");
+        img_print_picture_tag(img: get_field_options("options")["posts_default_image"], max_size: "content", min_size: "featured-small", classes: "default-card__pic");
     } else {
         include get_stylesheet_directory() . '/assets/icons/icon-file-image.svg';
     }
