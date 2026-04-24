@@ -28,7 +28,11 @@ if (get_field('toggle_block')):
             <div class="col col--image <?= isset($featured_image_position) && $featured_image_position ? $featured_image_position : "left" ?>">
                 <?php
                 if (isset($featured_image) && $featured_image) {
-                    get_template_part("template-parts/logo", "separator", ["classes" => "col__symbol"]);
+                    $options = get_field_options("options");
+
+                    if ($options["logo_symbol"]) {
+                        img_print_picture_tag(img: $options["logo_symbol"], max_size: "medium", classes: "col__symbol");
+                    }
 
                     img_print_picture_tag(
                         img: $featured_image,
