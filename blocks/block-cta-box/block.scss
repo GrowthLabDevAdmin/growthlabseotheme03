@@ -82,6 +82,10 @@
           rgba(var(--tertiary))
         );
       }
+
+      img{
+        object-position: top center;
+      }
     }
 
     #{$parent}__symbol {
