@@ -5,11 +5,11 @@ if (!defined('ABSPATH')) {
 ?>
 <div class="result-card <?= $args["classes"] ?>">
     <div class="result-card__wrapper">
-        <div class="result-card__inner tx-center">
-
-            <span class="result-card__amount">$<?= format_number_abbreviated($args["numerical_amount"]) ?></span>
+        <div class="result-card__inner">
 
             <p class="result-card__title"><?= $args["case_title"] ?></p>
+
+            <span class="result-card__amount">$<?= number_format($args["numerical_amount"], 0, '.', ','); ?></span>
 
             <?php if (isset($args["case_description"]) && $args["case_description"]): ?>
                 <p class="result-card__description"><?= $args["case_description"] ?></p>

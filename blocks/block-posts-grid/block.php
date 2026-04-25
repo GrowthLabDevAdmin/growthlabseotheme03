@@ -119,7 +119,6 @@ if (get_field('toggle_block')):
                                 case 'testimonial':
                                     get_template_part('template-parts/testimonial', 'card', array(
                                         "classes" => "posts-grid__card grid " . $grid_type,
-                                        "picture" => $author_picture,
                                         "author" => $author_name,
                                         "role" => $author_role,
                                         "content" => $testimonial_content,

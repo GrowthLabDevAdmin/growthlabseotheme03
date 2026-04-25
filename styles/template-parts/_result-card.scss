@@ -9,21 +9,23 @@
   &.grid {
     margin-bottom: var(--sp-xsm);
     display: inline-block;
-
-    #{$card}__wrapper {
-     
-    }
   }
 
   &__wrapper {
     width: 100%;
     max-height: 100%;
     position: relative;
-    padding: var(--sp-xsm);
+    padding: var(--sp-sm);
     @include m.flex-center;
-    background-color: rgb(var(--primary));
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05);
-    transition: 0.4s ease;
+    background-color: rgb(var(--secondary-light));
+    border-radius: 14px;
+    border-left: 5px solid rgb(var(--primary-light));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
   }
 
   &__inner {
@@ -32,36 +34,31 @@
     padding: var(--sp-xsm);
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: var(--sp-xsm);
     transition: padding 0.4s ease;
   }
 
-  &__amount {
-    @include m.flex-center;
-    flex-direction: column;
-    @include m.title(rgb(var(--secondary)), 4.8rem, 5vw, 4.8rem, 600, 1);
-
-    &::after {
-      width: 48px;
-      height: 4px;
-      left: 50% !important;
-      transform: translateX(-50%);
-    }
-  }
-
   &__title {
-    color: rgb(var(--secondary-light));
-    font-family: var(--font-content);
-    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: var(--font-titles);
+    font-size: 1.6rem;
+    color: rgb(var(--primary));
     font-weight: 700;
+    letter-spacing: 1px;
     line-height: 1.5;
   }
 
+  &__amount {
+    font-family: var(--font-titles);
+    font-size: 5.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: rgb(var(--tertiary));
+  }
+
   &__description {
-    padding-top: var(--sp-xsm);
-    border-top: 1px solid rgb(var(--tertiary));
-    color: rgb(var(--secondary-light));
-    font-weight: 400;
+    color: rgb(var(--tertiary));
+    font-size: 1.6rem;
+    line-height: 1.8;
   }
 }

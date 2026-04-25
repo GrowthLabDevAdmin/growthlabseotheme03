@@ -57,7 +57,7 @@ if (!$bg_mobile) $bg_mobile = [];
             <div class="content tx-center">
                 <?= $trust_badge_text ?>
             </div>
-            <img src="<?= $url ?>" alt="hero badge">
+            <img src="<?= $url ?>" alt="hero badge" loading="eager" fetchpriority='high' decoding="async">
         </div>
     <?php endif ?>
 </section>
