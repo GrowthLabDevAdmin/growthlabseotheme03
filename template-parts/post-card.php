@@ -12,6 +12,9 @@ if (!defined('ABSPATH')) {
         } else {
             echo "<div class='post-card__pic-wrapper'>";
         }
+        if (isset($args['cat']) && $args['cat']) {
+            echo "<span class='post-card__cat'>" . $args['cat'] . "</span>";
+        }
         if (isset($args['picture']) && $args['picture']) {
             img_print_picture_tag(img: $args["picture"], max_size: "content", min_size: "featured-small", classes: "post-card__pic");
         } elseif (get_field_options("options")["posts_default_image"] && !empty(get_field_options("options")["posts_default_image"])) {
@@ -28,7 +31,9 @@ if (!defined('ABSPATH')) {
         ?>
 
         <div class="post-card__inner">
-            <span class="post-card__meta"><?= $args["meta"] ?></span>
+            <span class="post-card__meta">
+                <?php include get_template_directory() . "\assets\icons\icon-calendar.svg" ?>
+                <?= $args["meta"] ?></span>
 
             <p class="post-card__title"><?= $args["title"] ?></p>
 
@@ -37,7 +42,7 @@ if (!defined('ABSPATH')) {
             <?php if ($args['link_url']): ?>
                 <a href="<?= $args['link_url'] ?>" target="<?= $args['link_target'] ?>" class="post-card__link" aria-label="Read more about <?= esc_attr($args['title']) ?>">
                     <span>Read More
-                        <?php include get_template_directory() . "\assets\icons\icon-circle-arrow.svg" ?>
+                        <?php include get_template_directory() . "\assets\icons\icon-arrow-right.svg" ?>
                     </span>
                 </a>
             <?php endif ?>

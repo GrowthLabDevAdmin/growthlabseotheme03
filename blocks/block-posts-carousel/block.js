@@ -63,9 +63,11 @@ if (!window.loadSplide) {
     let perPageLdpi =
       carouselType === "team"
         ? 1
-        : carouselType === "testimonial" || carouselType === "case-result"
-          ? 2
-          : 4;
+        : carouselType === "post"
+          ? 3
+          : carouselType === "testimonial" || carouselType === "case-result"
+            ? 2
+            : 4;
 
     const focusFor = (n) => (n % 2 === 1 ? "center" : false);
     const trimFor = (n) => (n % 2 === 1 ? true : false);

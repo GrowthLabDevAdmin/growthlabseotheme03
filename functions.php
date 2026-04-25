@@ -313,7 +313,7 @@ function growthlabseotheme03_custom_excerpt_length($length)
     if (get_post_type() === 'team') {
         return 50;
     }
-    return 15;
+    return 10;
 }
 add_filter('excerpt_length', 'growthlabseotheme03_custom_excerpt_length', 999);
 
