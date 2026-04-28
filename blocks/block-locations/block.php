@@ -38,6 +38,7 @@ if (get_field('toggle_block')):
                                 'template-parts/location',
                                 'card',
                                 array(
+                                    'accordion' => $enable_accordion_items ?? false,
                                     'location' => $location,
                                     'classes' => "locations-cards__card"
                                 )
@@ -48,14 +49,13 @@ if (get_field('toggle_block')):
                 <?php
                 endif;
                 ?>
-
-                <?php if ($cta_link && count($locations) === 1): ?>
-                    <a href="<?= $cta_link['url'] ?>" target="<?= $cta_link['target'] ?>" class="cta-btn btn btn--secondary" aria-label="<?= esc_attr($cta_link['title']) ?>">
-                        <span><?= $cta_link['title'] ?></span>
-                    </a>
-                <?php endif; ?>
-
             </div>
+
+            <?php if (isset($cta_link) && $cta_link): ?>
+                <a href="<?= $cta_link['url'] ?>" target="<?= $cta_link['target'] ?>" class="locations__btn btn--primary-dark" aria-label="<?= esc_attr($cta_link['title']) ?>">
+                    <span><?= $cta_link['title'] ?></span>
+                </a>
+            <?php endif; ?>
 
         </div>
     </section>

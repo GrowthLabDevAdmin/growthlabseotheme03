@@ -20,7 +20,7 @@
   $line-height: 1.25
 ) {
   position: relative;
-  color: if($color != null, $color, rgb(var(--primary)));
+  color: if($color != null, $color, rgb(var(--tertiary)));
   font-family: var(--font-titles);
   font-style: normal;
   font-weight: $font-weight;

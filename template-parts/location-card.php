@@ -3,22 +3,25 @@ if (!defined('ABSPATH')) {
     exit;
 }
 ?>
-<?php $location = $args['location']; ?>
-<div class="location-card accordion <?= isset($args['classes']) ? $args['classes'] : '' ?>">
-    <?php
-    $tp_url = $location['target_page_url'];
-    $city = $tp_url ? "<a href='$tp_url' target='_blank' aria-label='" . esc_attr($location['city']) . "'>" : '';
-    $city .= $location['city'];
-    $city .= $tp_url ? "</a>" : '';
-    ?>
+<?php
+$location = $args['location'];
+$accordion = $args['accordion'] ?? false;
+$tp_url = $location['target_page_url'];
+$city = $tp_url ? "<a href='$tp_url' target='_blank' aria-label='" . esc_attr($location['city']) . "'>" : '';
+$city .= $location['city'];
+$city .= $tp_url ? "</a>" : '';
+?>
+<div class="location-card 
+<?php if ($accordion) echo "accordion "; ?>
+<?= isset($args['classes']) ? $args['classes'] : '' ?>">
 
     <div class="location-card__container">
-        <?= print_title($city, $location['city_tag'], "location-card__city accordion__heading"); ?>
+        <?php if ($accordion) print_title($city, $location['city_tag'], "location-card__city accordion__heading"); ?>
 
         <div class="location-card__wrapper accordion__content">
 
             <div class="location-card__inner accordion__inner">
-                <div class="location-card__col">
+                <div class="location-card__row">
                     <?php if ($location['google_maps_embed_code']): ?>
                         <?php
                         $args = array(
@@ -30,18 +33,24 @@ if (!defined('ABSPATH')) {
                         ?>
                     <?php endif ?>
                 </div>
-                <div class="location-card__col">
+                <div class="location-card__row">
 
-                    <p class="location-card__address"><?= $location['address'] ?></p>
+                    <div class="location-card__icon">
+                        <?php include get_stylesheet_directory() . '/assets/icons/icon-location-2.svg'; ?>
+                    </div>
 
-                    <?php if ($location['cta_button']['url']): ?>
-                        <a href="<?= $location['cta_button']['url'] ?>" class="location-card__cta" aria-label="<?= esc_attr($location['cta_button']['title']) ?>">
-                            <?= $location['cta_button']['title'] ?>
+                    <?php if (!$accordion) print_title($city, $location['city_tag'], "location-card__city accordion__heading tx-center"); ?>
+
+                    <p class="location-card__address tx-center"><?= $location['address'] ?></p>
+
+                    <?php if ($location['cta_link']['url']): ?>
+                        <a href="<?= $location['cta_link']['url'] ?>" class="location-card__cta tx-center" aria-label="<?= esc_attr($location['cta_link']['title']) ?>">
+                            <?= $location['cta_link']['title'] ?>
                         </a>
                     <?php endif ?>
 
                     <?php if ($location['phone']): ?>
-                        <a href="tel:+1<?= get_flat_number($location['phone']) ?>" class="location-card__btn btn btn--tertiary" aria-label="Call us at <?= esc_attr($location['phone']) ?>">
+                        <a href="tel:+1<?= get_flat_number($location['phone']) ?>" class="location-card__btn btn--primary" aria-label="Call us at <?= esc_attr($location['phone']) ?>">
                             <span>
                                 <?= $location['phone'] ?>
                             </span>

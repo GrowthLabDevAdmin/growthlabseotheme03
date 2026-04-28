@@ -23,13 +23,9 @@
     gap: var(--sp-xsm);
   }
 
-  &__pretitle {
-    margin-bottom: 0;
-  }
-
   &__title {
-    margin-bottom: var(--sp-xsm);
-    @include m.title(null, 4rem, 4.2vw, 4.8rem);
+    margin-bottom: 0;
+    @include m.title(null, 3.5rem, 3.2vw, 8rem, 600, 1);
 
     &::after {
       left: 50%;
@@ -40,6 +36,7 @@
 
 .locations-cards {
   max-width: 100%;
+  width: 100%;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -58,7 +55,7 @@
     width: auto;
     min-width: 235px;
     margin-bottom: 0;
-    flex: 1 0 calc(50% - var(--sp-xsm) / 2);
+    flex: 1 0 calc(25% - (var(--sp-xsm) * 4 / 3));
   }
 }
 

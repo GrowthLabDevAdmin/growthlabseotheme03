@@ -10,7 +10,7 @@ get_header();
     <div class="container">
 
         <p class="h1 tx-center">404:</p>
-        <p class="h2 tx-center">Page Not Found</p>
+        <p class="h2 tx-center">PAGE NOT FOUND</p>
 
     </div>
 
