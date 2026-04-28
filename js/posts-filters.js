@@ -154,7 +154,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const title = post.title?.rendered ?? "";
         const excerpt = stripHTML(post.excerpt?.rendered ?? "").slice(0, 200);
         const link = post.link ?? "#";
-
+        // Extract category
+        const categoryTerms = post._embedded?.["wp:term"]?.find(terms => 
+          terms.some(t => t.taxonomy === "category")
+        ) ?? [];
+        const categoryName = categoryTerms.length > 0 ? categoryTerms[0].name : "";
         const featuredUrl =
           post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? "";
 
@@ -170,26 +174,30 @@ document.addEventListener("DOMContentLoaded", function () {
         return `
             <article class="post-card blog__card">
                 <div class="post-card__wrapper">
-                    <a href="${link}" class="post-card__pic-wrapper" target="_self">
+                    <a href="${link}" class="post-card__pic-wrapper" target="_self" aria-label="${title}">
                         ${pictureHTML}
+                        ${categoryName ? `<span class="post-card__cat">${categoryName}</span>` : ""}
                     </a>
                     <div class="post-card__inner">
-                        <span class="post-card__meta">${dateStr}</span>
+                        <span class="post-card__meta">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            ${dateStr}
+                        </span>
                         <p class="post-card__title">${title}</p>
                         <p class="post-card__content">${excerpt}</p>
-                        <a href="${link}" target="_self" class="post-card__link">
+                        <a href="${link}" target="_self" class="post-card__link" aria-label="Read more about ${title}">
                             <span>
-                            Read More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="44" viewBox="-5 0 75 44">
-  <!-- Circle arc center at (35,22), radius 18 -->
-  <path d="M 19.41 13 A 18 18 0 1 1 19.41 31" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-  
-  <!-- Arrow: tip moved 3px right → tip at x=38, tail at x=-18 -->
-  <line x1="-18" y1="22" x2="38" y2="22" stroke="currentColor" stroke-width="1.2"/>
-  
-  <!-- Arrow head, tip at x=38 -->
-  <polyline points="32,16 38,22 32,28" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
-</svg>
+                                Read More
+                                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="44" viewBox="-5 0 75 44">
+                                    <path d="M 19.41 13 A 18 18 0 1 1 19.41 31" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                                    <line x1="-18" y1="22" x2="38" y2="22" stroke="currentColor" stroke-width="1.2"/>
+                                    <polyline points="32,16 38,22 32,28" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+                                </svg>
                             </span>
                         </a>
                     </div>
