@@ -12,7 +12,7 @@ fieldset {
 
 label {
   margin-bottom: 0.4rem;
-  font-family: var(--font-content);
+  font-family: var(--font-primary);
   font-style: normal;
   font-size: 1.4rem;
   font-weight: 400;
@@ -34,7 +34,7 @@ textarea {
   background: rgb(var(--secondary-light));
   border-radius: 0;
   font-size: clamp(1.4rem, 2vw, 1.8rem);
-  font-family: var(--font-content);
+  font-family: var(--font-primary);
   line-height: 1.5;
   color: rgb(var(--tertiary));
 
@@ -108,7 +108,7 @@ input[type="hidden"] {
   background: rgb(var(--tertiary));
   text-align: center;
   text-transform: uppercase;
-  font-family: var(--font-content);
+  font-family: var(--font-primary);
   font-size: clamp(1.6rem, 2.2vw, 2.2rem);
   line-height: 1.5;
   font-weight: 700;

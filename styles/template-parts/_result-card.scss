@@ -39,7 +39,7 @@
 
   &__title {
     text-transform: uppercase;
-    font-family: var(--font-titles);
+    font-family: var(--font-secondary);
     font-size: 1.6rem;
     color: rgb(var(--primary));
     font-weight: 700;
@@ -48,7 +48,7 @@
   }
 
   &__amount {
-    font-family: var(--font-titles);
+    font-family: var(--font-secondary);
     font-size: 5.5rem;
     font-weight: 600;
     line-height: 1;

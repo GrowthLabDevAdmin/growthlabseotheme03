@@ -132,13 +132,13 @@
     width: 100%;
     display: block;
     color: rgb(var(--primary));
-    font-family: var(--font-titles);
+    font-family: var(--font-secondary);
     font-size: 3rem;
     font-weight: 600;
 
     span {
       display: block;
-      font-family: var(--font-content);
+      font-family: var(--font-primary);
       font-size: 1.5rem;
       font-weight: 400;
       color: rgb(var(--primary-light));
