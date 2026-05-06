@@ -49,9 +49,11 @@ if (!window.loadSplide) {
     const container = getComputedStyle(document.documentElement)
       .getPropertyValue("--container")
       .trim();
-    const postsSize = getComputedStyle(thumbnailsCarousel)
-      .getPropertyValue("--size")
-      .trim();
+
+    const postsSize =
+      carouselType === "team"
+        ? getComputedStyle(thumbnailsCarousel).getPropertyValue("--size").trim()
+        : 0;
 
     let perPageTablet =
       carouselType === "testimonial" || carouselType === "team"
