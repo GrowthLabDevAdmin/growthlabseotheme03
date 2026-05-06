@@ -50,11 +50,6 @@ if (!window.loadSplide) {
       .getPropertyValue("--container")
       .trim();
 
-    const postsSize =
-      carouselType === "team"
-        ? getComputedStyle(thumbnailsCarousel).getPropertyValue("--size").trim()
-        : 0;
-
     let perPageTablet =
       carouselType === "testimonial" || carouselType === "team"
         ? 1
@@ -105,28 +100,35 @@ if (!window.loadSplide) {
         },
       });
 
-      let thumbnails = new Splide(thumbnailsCarousel, {
-        fixedWidth:
-          document.querySelector(".posts-carousel__wrapper").clientWidth /
-            parseFloat(postsSize) -
-          15,
-        rewind: true,
-        arrows: true,
-        pagination: false,
-        isNavigation: true,
-        updateOnMove: true,
-        speed: 400,
-        mediaQuery: "min",
-        breakpoints: {
-          [mdpi]: {
-            fixedWidth: parseFloat(container) / parseFloat(postsSize) - 15,
-          },
-        },
-      });
+      if (thumbnailsCarousel) {
+        const postsSize = getComputedStyle(thumbnailsCarousel)
+          .getPropertyValue("--size")
+          .trim();
 
-      if (carouselType === "team") main.sync(thumbnails);
-      main.mount();
-      if (carouselType === "team") thumbnails.mount();
+        let thumbnails = new Splide(thumbnailsCarousel, {
+          fixedWidth:
+            document.querySelector(".posts-carousel__wrapper").clientWidth /
+              parseFloat(postsSize) -
+            15,
+          rewind: true,
+          arrows: true,
+          pagination: false,
+          isNavigation: true,
+          updateOnMove: true,
+          speed: 400,
+          mediaQuery: "min",
+          breakpoints: {
+            [mdpi]: {
+              fixedWidth: parseFloat(container) / parseFloat(postsSize) - 15,
+            },
+          },
+        });
+        main.sync(thumbnails);
+        main.mount();
+        thumbnails.mount();
+      } else {
+        main.mount();
+      }
     });
   };
 
