@@ -60,7 +60,7 @@ if (!$bg_mobile) $bg_mobile = [];
             <img src="<?= $url ?>" alt="hero badge" loading="eager" fetchpriority='high' decoding="async">
         </div>
     <?php endif ?>
-    <?php if (isset($badge) && $badge) img_print_picture_tag(
+    <?php if ($use_custom_badge_image && isset($badge) && $badge) img_print_picture_tag(
         img: $badge,
         classes: "hero__badge",
         max_size: "medium"
