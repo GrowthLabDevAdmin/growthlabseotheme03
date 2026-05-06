@@ -51,13 +51,18 @@ if (!$bg_mobile) $bg_mobile = [];
         </div>
     </div>
 
-    <?php if (isset($trust_badge_text) && $trust_badge_text): ?>
+    <?php if (!$use_custom_badge_image && isset($trust_badge_text) && $trust_badge_text): ?>
+        <?php $url = get_template_directory_uri() . '\assets\img\badge.webp'; ?>
         <div class="hero__badge">
-            <?php $url = get_template_directory_uri() . '\assets\img\badge.webp'; ?>
             <div class="content tx-center">
                 <?= $trust_badge_text ?>
             </div>
             <img src="<?= $url ?>" alt="hero badge" loading="eager" fetchpriority='high' decoding="async">
         </div>
     <?php endif ?>
+    <?php if (isset($badge) && $badge) img_print_picture_tag(
+        img: $badge,
+        classes: "hero__badge",
+        max_size: "medium"
+    ); ?>
 </section>

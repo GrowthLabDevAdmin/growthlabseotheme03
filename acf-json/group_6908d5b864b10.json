@@ -524,6 +524,27 @@
                     "allow_in_bindings": 0
                 },
                 {
+                    "key": "field_69facabfe8ec9",
+                    "label": "Use Custom Badge Image",
+                    "name": "use_custom_badge_image",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
                     "key": "field_69dc849435fd5",
                     "label": "Trust Badge Text",
                     "name": "trust_badge_text",
@@ -537,6 +558,11 @@
                                 "field": "field_6908d895c0fe4",
                                 "operator": "==",
                                 "value": "home"
+                            },
+                            {
+                                "field": "field_69facabfe8ec9",
+                                "operator": "!=",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -688,19 +714,19 @@
                             "preview_size": "medium"
                         },
                         {
-                            "key": "field_6908dd5cc0fe9",
-                            "label": "Badges",
-                            "name": "badges",
+                            "key": "field_69facb15e8ecb",
+                            "label": "Badge",
+                            "name": "badge",
                             "aria-label": "",
-                            "type": "repeater",
+                            "type": "image",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_6908d895c0fe4",
+                                        "field": "field_69facabfe8ec9",
                                         "operator": "==",
-                                        "value": "home"
+                                        "value": "1"
                                     }
                                 ]
                             ],
@@ -709,42 +735,17 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "layout": "table",
-                            "pagination": 0,
-                            "min": 0,
-                            "max": 0,
-                            "collapsed": "",
-                            "button_label": "Add Row",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_6908dd67c0fea",
-                                    "label": "Badge",
-                                    "name": "badge",
-                                    "aria-label": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": "",
-                                    "allow_in_bindings": 0,
-                                    "preview_size": "medium",
-                                    "parent_repeater": "field_6908dd5cc0fe9"
-                                }
-                            ]
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 0,
+                            "preview_size": "medium"
                         }
                     ]
                 }
@@ -961,5 +962,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1776989631
+    "modified": 1778043715
 }
