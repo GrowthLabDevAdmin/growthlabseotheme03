@@ -28,6 +28,7 @@ body {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  background: rgb(var(--secondary));
   font-size: 1.6rem;
   line-height: 1.5;
   font-family: var(--font-primary);
@@ -75,7 +76,7 @@ h6 *,
   font-family: var(--font-secondary);
   color: rgba(var(--primary));
   font-weight: 600;
-  line-height: .95;
+  line-height: 0.95;
   text-rendering: optimizeSpeed;
 }
 
