@@ -44,6 +44,14 @@ if (!function_exists('register_acf_blocks')) {
             delete_transient($cache_key);
         }
 
+        // Force a rebuild during local development if the block cache is stale or if
+        // the admin requests a cache clear. This helps ensure updated block.json
+        // metadata is picked up immediately.
+        if (is_admin() && (defined('WP_DEBUG') && WP_DEBUG || isset($_GET['clear_block_cache']))) {
+            delete_transient($cache_key);
+            delete_transient($hash_key);
+        }
+
         $block_files = get_transient($cache_key);
 
         if ($block_files === false) {
@@ -588,7 +596,69 @@ if (!function_exists('acf_color_picker_palette_script')) {
                 max-width: 100% !important;
             }
         </style>
-<?php
+    <?php
     }
 }
 add_action('acf/input/admin_head', 'acf_color_picker_palette_script');
+
+// NOTE: The google_maps_embed_code field stores values with a base64: prefix.
+// Encoding happens client-side (acf/input/admin_footer) before saving
+// to prevent ModSecurity false positives with Google Maps URLs.
+// DO NOT move this logic to PHP — the 403 occurs before the request reaches PHP.
+//
+// Selector: .acf-field[data-name="google_maps_embed_code"] input[type="text"]
+// The field may be nested inside repeaters; the selector covers this via data-name.
+//
+// To decode on frontend output:
+// if ( str_starts_with( $value, 'base64:' ) ) {
+//     $value = base64_decode( substr( $value, 7 ) );
+// }
+add_action('acf/input/admin_footer', function () {
+    ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            function encodeGoogleMapsFields() {
+                document.querySelectorAll(
+                    '.acf-field[data-name="google_maps_embed_code"] input[type="text"]'
+                ).forEach(function(field) {
+                    if (
+                        field.value &&
+                        field.value.includes('google.com/maps/embed') &&
+                        !field.value.startsWith('base64:')
+                    ) {
+                        field.value = 'base64:' + btoa(
+                            unescape(encodeURIComponent(field.value))
+                        );
+                    }
+                });
+            }
+
+            // Classic editor
+            var form = document.querySelector('#post');
+            if (form) {
+                form.addEventListener('submit', encodeGoogleMapsFields);
+            }
+
+            // Gutenberg
+            if (typeof wp !== 'undefined' && wp.data) {
+                var wasSaving = false;
+
+                wp.data.subscribe(function() {
+                    var editor = wp.data.select('core/editor');
+                    if (!editor) return;
+
+                    var isSaving = editor.isSavingPost() && !editor.isAutosavingPost();
+
+                    if (isSaving && !wasSaving) {
+                        encodeGoogleMapsFields();
+                    }
+
+                    wasSaving = isSaving;
+                });
+            }
+
+        });
+    </script>
+<?php
+});

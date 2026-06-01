@@ -5,6 +5,17 @@ if (!defined('ABSPATH')) {
 ?>
 
 <?php if ($args['iframe_src']):
+
+    if (str_starts_with($args['iframe_src'], 'base64:')) {
+
+        $decoded = base64_decode(substr($args['iframe_src'], 7), true);
+
+        $iframe_src = $decoded ?: '';
+    } else {
+
+        $iframe_src = $args['iframe_src'];
+    }
+
     if ($args['iframe_src']): ?>
         <div class="<?= $args["classes"] ?> gmap-lazy"
             data-src="<?= esc_url($args['iframe_src']) ?>"
