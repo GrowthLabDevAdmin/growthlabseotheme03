@@ -31,7 +31,7 @@ foreach (get_fields() as $key => $value) $$key = $value;
 
                 <main role="main" class="single__main">
                     <div class="single-team__heading">
-                        <p class="single-team__title h3"><?php the_title(); ?></p>
+                        <h1 class="single-team__title h3"><?php the_title(); ?></h1>
                         <p class="single-team__role pretitle h5"><?= $role; ?></p>
                     </div>
                     <div class="single-team__content formatted-text">
