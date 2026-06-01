@@ -250,7 +250,8 @@ input[type="hidden"] {
 }
 
 .gfield_checkbox {
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--sp-xsm);
 
   .gchoice {
