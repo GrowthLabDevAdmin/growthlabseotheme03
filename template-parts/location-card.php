@@ -36,7 +36,7 @@ $city .= $tp_url ? "</a>" : '';
                 <div class="location-card__row">
 
                     <div class="location-card__icon">
-                        <?php include get_stylesheet_directory() . '/assets/icons/icon-location-2.svg'; ?>
+                        <?php include get_template_directory() . '/assets/icons/icon-location-2.svg'; ?>
                     </div>
 
                     <?php if (!$accordion) print_title($city, $location['city_tag'], "location-card__city accordion__heading tx-center"); ?>

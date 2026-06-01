@@ -268,6 +268,10 @@ input[type="hidden"] {
     align-items: baseline;
     column-gap: 10px;
 
+    .gfield_description {
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+    }
+
     .gform-field-label {
       margin-bottom: 0;
       font-size: clamp(1.4rem, 2vw, 1.6rem);
