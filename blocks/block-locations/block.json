@@ -5,18 +5,20 @@
   "script": ["file:./block-min.js"],
   "category": "growthlabseotheme03-blocks",
   "icon": "block-default",
-  "keywords": [
-    "growthlabseo",
-    "carousel",
-    "locations",
-    "custom carousel"
-  ],
+  "keywords": ["growthlabseo", "carousel", "locations", "custom carousel"],
   "acf": {
     "mode": "edit",
     "renderTemplate": "block.php"
   },
   "supports": {
-    "mode": false
+    "mode": true,
+    "customClassName": true,
+    "alignWide": true,
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": ["horizontal", "vertical"]
+    }
   },
   "align": "full"
 }
