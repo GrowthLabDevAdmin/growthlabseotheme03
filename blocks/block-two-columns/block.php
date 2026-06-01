@@ -16,8 +16,9 @@ if (get_field('toggle_block')):
         <?= $background_type ?>
         <?= $background_type === "dark" ? "bg-gradient" : "" ?>
         <?php if ($reverse_order) echo "reverse" ?> 
-        <?php if ($show_top_separator) echo "separator" ?>
+        <?php if ($show_top_separator) echo "separator" ?><?= !empty($block['className']) ? ' ' . esc_attr($block['className']) : '' ?>
         "
+        <?= block_style_attribute($block); ?>
         <?php if (isset($extract_block_from_content) && $extract_block_from_content) echo "data-extract='$place'"; ?>>
 
         <?php
