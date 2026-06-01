@@ -9,7 +9,7 @@ foreach (get_fields() as $key => $value) $$key = $value;
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <aside role="complementary" class="single__sidebar single-team__sidebar formatted-text">
+                <aside role="complementary" class="single__sidebar single-team__sidebar sidebar formatted-text">
                     <?php
                     if ($headshot && !empty($headshot)) {
                         img_print_picture_tag(img: $headshot, max_size: "cover-mobile", classes: "single-team__picture");
