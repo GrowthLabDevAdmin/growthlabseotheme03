@@ -19,6 +19,11 @@
     background-color: transparent;
     transition: 0.3s ease;
 
+    &.nohero {
+      position: sticky;
+      background-color: rgba(var(--primary-dark));
+    }
+
     &.scrolling {
       background-color: rgb(var(--primary-dark));
       transition: 0.3s ease;

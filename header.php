@@ -38,7 +38,9 @@ if (!defined('ABSPATH')) {
     }
     ?>
 
-    <header role="banner" class="site-header <?= !is_404() && get_field('hero_style') !== "nohero" && $sticky_header ? "site-header--sticky" : "" ?>">
+    <header role="banner" class="site-header 
+    <?= !is_404() && $sticky_header ? "site-header--sticky" : "" ?>
+    <?= get_field('hero_style') === "nohero" ? "nohero" : "" ?>">
 
         <div class="site-header__wrapper">
 
@@ -108,16 +110,16 @@ if (!defined('ABSPATH')) {
 
             <?php if ($phone_number): ?>
                 <div class="site-header__callout">
-                        <?php if ($top_callout): ?>
-                            <span class="text"><?= $top_callout ?></span>
-                        <?php endif; ?>
+                    <?php if ($top_callout): ?>
+                        <span class="text"><?= $top_callout ?></span>
+                    <?php endif; ?>
 
-                        <a href="tel:+1<?= get_flat_number($phone_number) ?>" class="phone btn btn--primary" aria-label="Call us at <?= esc_attr($phone_number) ?>">
-                            <?php include(get_template_directory() . "/assets/icons/icon-phone.svg") ?>
-                            <span>
-                                <?= $phone_number ?>
-                            </span>
-                        </a>
+                    <a href="tel:+1<?= get_flat_number($phone_number) ?>" class="phone btn btn--primary" aria-label="Call us at <?= esc_attr($phone_number) ?>">
+                        <?php include(get_template_directory() . "/assets/icons/icon-phone.svg") ?>
+                        <span>
+                            <?= $phone_number ?>
+                        </span>
+                    </a>
                 </div>
             <?php endif; ?>
         </div>
