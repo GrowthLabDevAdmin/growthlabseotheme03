@@ -250,6 +250,7 @@ input[type="hidden"] {
 }
 
 .gfield_checkbox {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: var(--sp-xsm);
