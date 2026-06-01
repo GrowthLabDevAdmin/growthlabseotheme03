@@ -252,17 +252,18 @@ input[type="hidden"] {
 .gfield_checkbox {
   flex-flow: row wrap;
   gap: var(--sp-xsm);
-}
 
-.gchoice {
-  min-width: 120px;
-  flex: 0 0 120px;
-  flex-direction: row;
-  align-items: center;
-  column-gap: 10px;
+  .gchoice {
+    min-width: 120px;
+    flex: 0 0 120px;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
 
-  .gform-field-label {
-    margin-bottom: 0;
-    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    .gform-field-label {
+      margin-bottom: 0;
+      font-size: clamp(1.4rem, 2vw, 1.6rem);
+      line-height: 1.2;
+    }
   }
 }
