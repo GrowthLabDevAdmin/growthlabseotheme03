@@ -13,31 +13,31 @@ function _theme_get_tinymce_color_map(): array
 
     global $default_colors;
 
-    $primary_default = $default_colors['primary']['default'];
-    $primary_dark = $default_colors['primary']['dark'];
-    $primary_light = $default_colors['primary']['light'];
+    $primary_default   = $default_colors['primary']['default']   ?? '#15253f';
+    $primary_dark      = $default_colors['primary']['dark']      ?? '#08182f';
+    $primary_light     = $default_colors['primary']['light']     ?? '#2C3D5B';
 
-    $secondary_default = $default_colors['secondary']['default'];
-    $secondary_dark = $default_colors['secondary']['dark'];
-    $secondary_light = $default_colors['secondary']['light'];
+    $secondary_default = $default_colors['secondary']['default'] ?? '#F4F3EE';
+    $secondary_dark    = $default_colors['secondary']['dark']    ?? '#E7E5DF';
+    $secondary_light   = $default_colors['secondary']['light']   ?? '#FFFFFF';
 
-    $tertiary_default = $default_colors['tertiary']['default'];
-    $tertiary_dark = $default_colors['tertiary']['dark'];
-    $tertiary_light = $default_colors['tertiary']['light'];
+    $tertiary_default  = $default_colors['tertiary']['default']  ?? '#BC9061';
+    $tertiary_dark     = $default_colors['tertiary']['dark']     ?? '#9D7A55';
+    $tertiary_light    = $default_colors['tertiary']['light']    ?? '#DCAB77';
 
-    $text_default = $default_colors['text'];
+    $text_default      = $default_colors['text']                 ?? '#15253f';
 
     $colors = [
-        sanitize_hex_color(get_theme_mod('primary_color',         $primary_default)) ?: $primary_default => 'Primary Color',
-        sanitize_hex_color(get_theme_mod('primary_color_dark',    $primary_dark)) ?: $primary_dark => 'Primary Dark',
-        sanitize_hex_color(get_theme_mod('primary_color_light',   $primary_light)) ?: $primary_light => 'Primary Light',
+        sanitize_hex_color(get_theme_mod('primary_color',         $primary_default))   ?: $primary_default   => 'Primary Color',
+        sanitize_hex_color(get_theme_mod('primary_color_dark',    $primary_dark))      ?: $primary_dark      => 'Primary Dark',
+        sanitize_hex_color(get_theme_mod('primary_color_light',   $primary_light))     ?: $primary_light     => 'Primary Light',
         sanitize_hex_color(get_theme_mod('secondary_color',       $secondary_default)) ?: $secondary_default => 'Secondary Color',
-        sanitize_hex_color(get_theme_mod('secondary_color_dark',  $secondary_dark)) ?: $secondary_dark => 'Secondary Dark',
-        sanitize_hex_color(get_theme_mod('secondary_color_light', $secondary_light)) ?: $secondary_light => 'Secondary Light',
-        sanitize_hex_color(get_theme_mod('tertiary_color',        $tertiary_default)) ?: $tertiary_default => 'Tertiary Color',
-        sanitize_hex_color(get_theme_mod('tertiary_color_dark',   $tertiary_dark)) ?: $tertiary_dark => 'Tertiary Dark',
-        sanitize_hex_color(get_theme_mod('tertiary_color_light',  $tertiary_light)) ?: $tertiary_light => 'Tertiary Light',
-        sanitize_hex_color(get_theme_mod('text_color',            $text_default)) ?: $text_default => 'Text Color',
+        sanitize_hex_color(get_theme_mod('secondary_color_dark',  $secondary_dark))    ?: $secondary_dark    => 'Secondary Dark',
+        sanitize_hex_color(get_theme_mod('secondary_color_light', $secondary_light))   ?: $secondary_light   => 'Secondary Light',
+        sanitize_hex_color(get_theme_mod('tertiary_color',        $tertiary_default))  ?: $tertiary_default  => 'Tertiary Color',
+        sanitize_hex_color(get_theme_mod('tertiary_color_dark',   $tertiary_dark))     ?: $tertiary_dark     => 'Tertiary Dark',
+        sanitize_hex_color(get_theme_mod('tertiary_color_light',  $tertiary_light))    ?: $tertiary_light    => 'Tertiary Light',
+        sanitize_hex_color(get_theme_mod('text_color',            $text_default))      ?: $text_default      => 'Text Color',
     ];
 
     $map = [];
@@ -48,6 +48,12 @@ function _theme_get_tinymce_color_map(): array
 
     return $map;
 }
+
+// Register the line height plugin for TinyMCE
+add_filter('mce_external_plugins', function ($plugins) {
+    $plugins['lineheight'] = get_template_directory_uri() . '/js/vendor/tiny-mce/lineheight-min.js';
+    return $plugins;
+});
 
 // 1️⃣ Load editor CSS
 if (!function_exists('my_acf_editor_styles')) {
@@ -70,8 +76,9 @@ add_filter('mce_css', 'my_acf_editor_styles');
 if (!function_exists('my_acf_wysiwyg_custom_settings')) {
     function my_acf_wysiwyg_custom_settings($init)
     {
-        $init['font_formats']     = 'Khand=Khand,sans-serif;Figtree=Figtree,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
-        $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 48px 56px 64px 72px 80px 88px 96px 104px 124px 148px 156px 168px';
+        $init['font_formats']     = 'Mona Sans=Mona Sans,sans-serif;Roboto Serif=Roboto Serif,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
+        $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 42px 44px 46px 48px 50px 52px 54px 56px 58px 60px 62px 64px 72px 80px 88px 96px 104px 124px 148px 156px 168px';
+        $init['lineheight_formats'] = '.5 .55 .6 .65 .7 .75 .8 .85 .9 .95 1 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 2 2.5 3';
         return $init;
     }
 }
@@ -81,8 +88,9 @@ add_filter('tiny_mce_before_init', 'my_acf_wysiwyg_custom_settings', 1);
 if (!function_exists('my_acf_tinymce_settings')) {
     function my_acf_tinymce_settings($init, $id)
     {
-        $init['font_formats']     = 'Khand=Khand,sans-serif;Figtree=Figtree,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
-        $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 48px 56px 64px 72px 80px 88px 96px 104px 124px 148px 156px 168px';
+        $init['font_formats']     = 'Mona Sans=Mona Sans,sans-serif;Roboto Serif=Roboto Serif,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
+        $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 42px 44px 46px 48px 50px 52px 54px 56px 58px 60px 62px 64px 72px 80px 88px 96px 104px 124px 148px 156px 168px';
+        $init['lineheight_formats'] = '.5 .55 .6 .65 .7 .75 .8 .85 .9 .95 1 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 2 2.5 3';
         return $init;
     }
 }
@@ -96,6 +104,7 @@ if (!function_exists('my_acf_override_full_toolbar')) {
             'formatselect',
             'fontselect',
             'fontsizeselect',
+            'lineheightselect',
             'bold',
             'italic',
             'underline',
@@ -162,31 +171,31 @@ if (!function_exists('my_wp_editor_formats')) {
         }
         global $default_colors;
 
-        $primary_default = $default_colors['primary']['default'] ?? '#15253f';
-        $primary_dark = $default_colors['primary']['dark'] ?? '#08182f';
-        $primary_light = $default_colors['primary']['light'] ?? '#2C3D5B';
+        $primary_default   = $default_colors['primary']['default']   ?? '#15253f';
+        $primary_dark      = $default_colors['primary']['dark']      ?? '#08182f';
+        $primary_light     = $default_colors['primary']['light']     ?? '#2C3D5B';
 
         $secondary_default = $default_colors['secondary']['default'] ?? '#F4F3EE';
-        $secondary_dark = $default_colors['secondary']['dark'] ?? '#E7E5DF';
-        $secondary_light = $default_colors['secondary']['light'] ?? '#FFFFFF';
+        $secondary_dark    = $default_colors['secondary']['dark']    ?? '#E7E5DF';
+        $secondary_light   = $default_colors['secondary']['light']   ?? '#FFFFFF';
 
-        $tertiary_default = $default_colors['tertiary']['default'] ?? '#BC9061';
-        $tertiary_dark = $default_colors['tertiary']['dark'] ?? '#9D7A55';
-        $tertiary_light = $default_colors['tertiary']['light'] ?? '#DCAB77';
+        $tertiary_default  = $default_colors['tertiary']['default']  ?? '#BC9061';
+        $tertiary_dark     = $default_colors['tertiary']['dark']     ?? '#9D7A55';
+        $tertiary_light    = $default_colors['tertiary']['light']    ?? '#DCAB77';
 
-        $text_default = $default_colors['text'] ?? '#15253f';
+        $text_default      = $default_colors['text']                 ?? '#15253f';
 
         add_theme_support('editor-color-palette', [
-            ['name' => __('Primary Color',         'growthlabseotheme03'), 'slug' => 'primary',        'color' => sanitize_hex_color(get_theme_mod('primary_color',         $primary_default)) ?: $primary_default],
-            ['name' => __('Primary Dark',          'growthlabseotheme03'), 'slug' => 'primary-dark',   'color' => sanitize_hex_color(get_theme_mod('primary_color_dark',    $primary_dark)) ?: $primary_dark],
-            ['name' => __('Primary Light',         'growthlabseotheme03'), 'slug' => 'primary-light',  'color' => sanitize_hex_color(get_theme_mod('primary_color_light',   $primary_light)) ?: $primary_light],
-            ['name' => __('Secondary Color',       'growthlabseotheme03'), 'slug' => 'secondary',      'color' => sanitize_hex_color(get_theme_mod('secondary_color',       $secondary_default)) ?: $secondary_default],
-            ['name' => __('Secondary Dark',        'growthlabseotheme03'), 'slug' => 'secondary-dark', 'color' => sanitize_hex_color(get_theme_mod('secondary_color_dark',  $secondary_dark)) ?: $secondary_dark],
-            ['name' => __('Secondary Light',       'growthlabseotheme03'), 'slug' => 'secondary-light', 'color' => sanitize_hex_color(get_theme_mod('secondary_color_light', $secondary_light)) ?: $secondary_light],
-            ['name' => __('Tertiary Color',        'growthlabseotheme03'), 'slug' => 'tertiary',       'color' => sanitize_hex_color(get_theme_mod('tertiary_color',        $tertiary_default)) ?: $tertiary_default],
-            ['name' => __('Tertiary Dark',         'growthlabseotheme03'), 'slug' => 'tertiary-dark',  'color' => sanitize_hex_color(get_theme_mod('tertiary_color_dark',   $tertiary_dark)) ?: $tertiary_dark],
-            ['name' => __('Tertiary Light',        'growthlabseotheme03'), 'slug' => 'tertiary-light', 'color' => sanitize_hex_color(get_theme_mod('tertiary_color_light',  $tertiary_light)) ?: $tertiary_light],
-            ['name' => __('Text Color',            'growthlabseotheme03'), 'slug' => 'text',           'color' => sanitize_hex_color(get_theme_mod('text_color',            $text_default)) ?: $text_default],
+            ['name' => __('Primary Color',         get_text_domain()), 'slug' => 'primary',         'color' => sanitize_hex_color(get_theme_mod('primary_color',         $primary_default))   ?: $primary_default],
+            ['name' => __('Primary Dark',          get_text_domain()), 'slug' => 'primary-dark',    'color' => sanitize_hex_color(get_theme_mod('primary_color_dark',    $primary_dark))      ?: $primary_dark],
+            ['name' => __('Primary Light',         get_text_domain()), 'slug' => 'primary-light',   'color' => sanitize_hex_color(get_theme_mod('primary_color_light',   $primary_light))     ?: $primary_light],
+            ['name' => __('Secondary Color',       get_text_domain()), 'slug' => 'secondary',       'color' => sanitize_hex_color(get_theme_mod('secondary_color',       $secondary_default)) ?: $secondary_default],
+            ['name' => __('Secondary Dark',        get_text_domain()), 'slug' => 'secondary-dark',  'color' => sanitize_hex_color(get_theme_mod('secondary_color_dark',  $secondary_dark))    ?: $secondary_dark],
+            ['name' => __('Secondary Light',       get_text_domain()), 'slug' => 'secondary-light', 'color' => sanitize_hex_color(get_theme_mod('secondary_color_light', $secondary_light))   ?: $secondary_light],
+            ['name' => __('Tertiary Color',        get_text_domain()), 'slug' => 'tertiary',        'color' => sanitize_hex_color(get_theme_mod('tertiary_color',        $tertiary_default))  ?: $tertiary_default],
+            ['name' => __('Tertiary Dark',         get_text_domain()), 'slug' => 'tertiary-dark',   'color' => sanitize_hex_color(get_theme_mod('tertiary_color_dark',   $tertiary_dark))     ?: $tertiary_dark],
+            ['name' => __('Tertiary Light',        get_text_domain()), 'slug' => 'tertiary-light',  'color' => sanitize_hex_color(get_theme_mod('tertiary_color_light',  $tertiary_light))    ?: $tertiary_light],
+            ['name' => __('Text Color',            get_text_domain()), 'slug' => 'text',            'color' => sanitize_hex_color(get_theme_mod('text_color',            $text_default))      ?: $text_default],
         ]);
     }
 }
@@ -197,12 +206,13 @@ if (!function_exists('my_wp_editor_default_settings')) {
     function my_wp_editor_default_settings($init)
     {
         $init['font_formats']     = 'Khand=Khand,sans-serif;Figtree=Figtree,serif;Arial=Arial,Helvetica,sans-serif;Times New Roman=Times New Roman,Times,serif';
-        $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 48px 56px 64px 72px 80px 88px 96px 104px 124px 148px 156px 168px';
-        $init['toolbar1']         = 'formatselect,fontselect,fontsizeselect,bold,italic,underline,forecolor,backcolor,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,removeformat,undo,redo';
+        $init['fontsize_formats'] = '8px 10px 12px 14px 16px 18px 20px 24px 28px 32px 36px 40px 42px 44px 46px 48px 50px 52px 54px 56px 58px 60px 62px 64px 72px 80px 88px 96px 104px 124px 148px 156px 168px';
+        $init['lineheight_formats'] = '.5 .55 .6 .65 .7 .75 .8 .85 .9 .95 1 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 2 2.5 3';
+        $init['toolbar1']         = 'formatselect,fontselect,fontsizeselect,lineheightselect,bold,italic,underline,forecolor,backcolor,bullist,numlist,alignleft,aligncenter,alignright,link,unlink,removeformat,undo,redo';
         $init['toolbar2']         = '';
         $init['textcolor_map']    = $init['textcolor_map']  ?? [];
         $init['textcolor_cols']   = 5;
-        $init['plugins']          = ($init['plugins'] ?? '') . ' textcolor';
+        $init['plugins']          = ($init['plugins'] ?? '') . ' textcolor lineheight';
         return $init;
     }
 }
