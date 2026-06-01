@@ -105,6 +105,10 @@
       height: 100%;
       display: block;
       color: rgb(var(--primary));
+
+      path {
+        fill: rgb(var(--tertiary));
+      }
     }
   }
 
