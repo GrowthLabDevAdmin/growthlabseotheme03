@@ -457,8 +457,9 @@ img.bg-image {
   }
 
   & > * {
+    text-align: center;
     font-family: var(--font-primary);
-    font-size: clamp(1.8rem, 2.2vw, 2.2rem);
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem);
     line-height: 1.5;
     font-weight: 700;
     letter-spacing: 0.45px;
