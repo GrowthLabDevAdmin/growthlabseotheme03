@@ -104,7 +104,7 @@
     &__title {
       max-width: 60%;
       margin-bottom: 1.5rem;
-      @include m.title(rgba(var(--primary-dark)), 1.8rem, 2vw, 1.8rem, 600, 1);
+      @include m.title(rgba(var(--primary-dark)), 2rem, 2vw, 2.2rem, 600, 1);
     }
   }
 }
