@@ -20,9 +20,6 @@ $bg_mobile = isset($background_mobile) && $background_mobile ? $background_mobil
 if (!$bg_desktop) $bg_desktop = [];
 if (!$bg_tablet) $bg_tablet = [];
 if (!$bg_mobile) $bg_mobile = [];
-
-//Title Values
-$hero_title_tag = $hero_title_tag ?? null;
 ?>
 <section id="hero" class="hero hero--v5">
 

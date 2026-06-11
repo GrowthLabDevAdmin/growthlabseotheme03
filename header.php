@@ -125,6 +125,7 @@ if (!defined('ABSPATH')) {
 
     <?php
     $hero_title = get_field("hero_properties", $post_id)["hero_title"] ?? null;
+    $hero_title_tag = $posts_default_title_tag ?: "h1";
 
     if ($hero_title === null || $hero_title === "") {
         if (is_home()) {
@@ -136,6 +137,8 @@ if (!defined('ABSPATH')) {
         } elseif (is_tax()) {
             $hero_title = single_term_title('', false);
         }
+
+        $hero_title = "<$hero_title_tag> $hero_title </$hero_title_tag>";
     }
 
     $args = array(
