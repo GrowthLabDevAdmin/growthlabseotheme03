@@ -41,15 +41,16 @@ if (get_field('toggle_block')):
                     foreach ($items as $item):
                         foreach ($item as $key => $value) $$key = $value;
                         $bg_item_url = get_template_directory_uri() . '\assets\img\figure_selling_points.webp';
+                        $item_wrapper = isset($link) && $link ? "a" : "div";
                 ?>
 
-                        <div class="item">
+                        <<?= $item_wrapper ?> class="item" <?= isset($link) && $link ? "href='" . esc_url($link['url']) . "' target='" . esc_attr($link['target']) . "'" : "" ?>>
                             <img data-src="<?= $bg_item_url ?>" alt="" class="item__bg lazy-image">
                             <div class="item__icon">
                                 <?php if (isset($icon) && $icon) img_print_picture_tag(img: $icon, max_size: "thumbnail"); ?>
                             </div>
-                            <p class="item__title tx-center"><?= $title ?></p>
-                        </div>
+                            <<?= isset($title_tag) && $title_tag ? $title_tag : "h3" ?> class="item__title tx-center"><?= $title ?></<?= isset($title_tag) && $title_tag ? $title_tag : "h3" ?>>
+                        </<?= $item_wrapper ?>>
 
                 <?php
                     endforeach;

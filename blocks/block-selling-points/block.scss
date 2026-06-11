@@ -56,9 +56,9 @@
     @include m.flex-center;
 
     @media (min-width: v.$mdpi) {
-      &:nth-of-type(5),
-      &:nth-of-type(6),
-      &:nth-of-type(7) {
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7) {
         margin-top: -12rem;
       }
     }

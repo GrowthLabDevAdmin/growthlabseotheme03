@@ -374,6 +374,24 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
+                    "key": "field_6a2a3816c13ef",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_69deff992bb0d"
+                },
+                {
                     "key": "field_69deffb02bb0f",
                     "label": "Icon",
                     "name": "icon",
@@ -421,6 +439,41 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_69deff992bb0d"
+                },
+                {
+                    "key": "field_6a2a3836c13f0",
+                    "label": "Title Tag",
+                    "name": "title_tag",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "h1": "h1",
+                        "h2": "h2",
+                        "h3": "h3",
+                        "h4": "h4",
+                        "h5": "h5",
+                        "h6": "h6",
+                        "p": "p"
+                    },
+                    "default_value": "p",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_69deff992bb0d"
                 }
             ]
         },
@@ -463,5 +516,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1776230668
+    "modified": 1781151840
 }
