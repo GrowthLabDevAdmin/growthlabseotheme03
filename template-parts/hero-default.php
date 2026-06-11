@@ -36,7 +36,7 @@ if ($hero_title === null || $hero_title === "") {
         $hero_title = single_term_title('', false);
     }
 
-    $hero_title = "<h1> $hero_title </h1>"
+    $hero_title = "<h1> $hero_title </h1>";
 }
 
 ?>
