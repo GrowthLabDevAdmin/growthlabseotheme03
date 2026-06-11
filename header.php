@@ -101,9 +101,7 @@ if (!defined('ABSPATH')) {
                         <hr>
                     </div>
 
-                    <nav class="main-nav" role="navigation">
-                        <?php wp_nav_menu($menu_args); ?>
-                    </nav>
+                    <?php wp_nav_menu($menu_args); ?>
                 <?php endif ?>
 
             </div>
