@@ -61,15 +61,14 @@
     min-height: 100vh;
     height: fit-content;
     padding-top: var(--sp-sm);
+    padding-bottom: 0 !important;
     position: relative;
 
     @media (min-width: v.$ldpi) {
       padding-top: var(--sp-md);
     }
 
-    &:not(:has(+ .site-footer .contact-form-footer)) {
-      padding-bottom: 0 !important;
-
+    &:has(+ .site-footer .contact-form-footer) {
       #{$parent}__wrapper {
         padding-bottom: var(--sp-lg);
       }
