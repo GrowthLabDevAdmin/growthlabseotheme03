@@ -69,6 +69,10 @@
 
     &:not(:has(+ .site-footer .contact-form-footer)) {
       padding-bottom: 0 !important;
+
+      #{$parent}__wrapper {
+        padding-bottom: var(--sp-lg);
+      }
     }
 
     #{$parent}__bg {
