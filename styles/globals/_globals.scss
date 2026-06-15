@@ -673,18 +673,26 @@ img {
   }
 }
 
-img.alignleft:not(:only-child) {
-  margin: 5px 20px 0px 0px;
+.alignleft:not(:only-child) {
+  margin-right: 20px;
 }
 
-img.alignright:not(:only-child) {
-  margin: 5px 0px 0px 20px;
+img.alignleft:not(:only-child) {
+  margin: 5px 20px 0px 0px;
 }
 
 img.alignleft:not(:only-child),
 p:has(.alignleft),
 .alignleft:not(:only-child) {
   float: left;
+}
+
+.alignright:not(:only-child) {
+  margin-left: 20px;
+}
+
+img.alignright:not(:only-child) {
+  margin: 5px 0px 0px 20px;
 }
 
 img.alignright:not(:only-child),
