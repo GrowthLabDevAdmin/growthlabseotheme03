@@ -40,6 +40,10 @@
 
   $parent: &;
 
+  &::before {
+    content: none;
+  }
+
   &__wrapper {
     height: 100%;
     padding: var(--sp-sm);
