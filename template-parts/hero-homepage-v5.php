@@ -27,7 +27,7 @@ if (!$bg_mobile) $bg_mobile = [];
 
     <div class="hero__wrapper container">
         <div class="hero__content tx-center">
-            <?php print_title($hero_tagline, $hero_tagline_tag, "content-box__tagline"); ?>
+            <?php print_title($hero_tagline, $hero_tagline_tag, "hero__tagline"); ?>
             <div class="hero__title">
                 <?= $args["hero_title"] ?>
             </div>
