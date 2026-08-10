@@ -423,7 +423,7 @@
 
     #{$hero}__title {
       margin-bottom: var(--sp-xsm);
-      @include m.title(rgb(var(--secondary)), 4rem, 6.2vw, 8rem, null, 1);
+      @include m.title(rgb(var(--secondary-light)), 4rem, 6.2vw, 8rem, null, 1);
 
       & > * {
         all: inherit;
@@ -436,7 +436,7 @@
       text-align: center;
       text-transform: uppercase;
       font-family: var(--font-primary);
-      font-size: clamp(1.4rem, 1.7vw, 1.6rem);
+      font-size: clamp(1.4rem, 1.7vw, 1.8rem);
       letter-spacing: 3px;
       line-height: 1.5;
       color: rgb(var(--secondary-light));
@@ -448,7 +448,7 @@
       text-align: center;
       text-transform: uppercase;
       font-family: var(--font-primary);
-      font-size: clamp(1.4rem, 1.7vw, 1.6rem);
+      font-size: clamp(1.4rem, 1.7vw, 1.8rem);
       line-height: 1.5;
       color: rgb(var(--secondary-light));
     }
