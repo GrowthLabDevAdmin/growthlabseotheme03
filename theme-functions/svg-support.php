@@ -44,6 +44,7 @@ function wp_check_svg($file)
 
     if ($scripts->length > 0) {
         // The file contains <script> tags, which is not allowed
+        $file['error'] = __('SVG files containing scripts are not allowed.', 'growthlab');
         return $file;
     }
 
@@ -190,7 +191,7 @@ add_filter('the_content', 'check_content_images');
 
 function sanitize_svg($file)
 {
-    if (empty($file['tmp_name'])) {
+    if (!empty($file['error']) || empty($file['tmp_name'])) {
         return $file;
     }
 
@@ -236,3 +237,4 @@ function sanitize_svg($file)
 
     return $file;
 }
+add_filter('wp_handle_upload_prefilter', 'sanitize_svg');
