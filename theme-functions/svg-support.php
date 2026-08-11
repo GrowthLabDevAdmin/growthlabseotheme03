@@ -65,7 +65,7 @@ function image_to_svg(array|string $image, string $classes = '')
 
     if (is_array($image)) {
         $img_url = $image['url'];
-    } else{
+    } else {
         $img_url = $image;
     }
 
