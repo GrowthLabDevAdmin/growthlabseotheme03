@@ -23,7 +23,7 @@
   &__wrapper {
     @include m.flex-center;
     flex-direction: column;
-    gap: var(--sp-sm);
+    gap: var(--sp-xsm);
   }
 
   &__title {
