@@ -14,11 +14,14 @@
     gap: var(--sp-xsm);
   }
 
+  &__pretitle {
+    margin-bottom: 0;
+    @include m.title(rgba(var(--tertiary-dark)), 2rem, 2.2vw, 4rem, 600, 1);
+  }
+
   &__title {
-    @include m.title(null, 4rem, 4.2vw, 4.8rem);
-    &::after {
-      content: none;
-    }
+    margin-bottom: 0;
+    @include m.title(rgba(var(--primary-dark)), 4rem, 4.5vw, 10rem, 600, 1);
   }
 
   &__grid {
