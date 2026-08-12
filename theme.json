@@ -15,6 +15,103 @@
       "lineHeight": true,
       "letterSpacing": true,
       "fluid": true,
+      "fontFamilies": [
+        {
+          "name": "Figtree",
+          "slug": "primary",
+          "fontFamily": "\"Figtree\", sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Figtree",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/figtree-v9-latin/figtree-v9-latin-regular.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Figtree",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/figtree-v9-latin/figtree-v9-latin-italic.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Figtree",
+              "fontWeight": "500",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/figtree-v9-latin/figtree-v9-latin-500.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Figtree",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/figtree-v9-latin/figtree-v9-latin-600.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Figtree",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/figtree-v9-latin/figtree-v9-latin-700.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Khand",
+          "slug": "secondary",
+          "fontFamily": "\"Khand\", serif",
+          "fontFace": [
+            {
+              "fontFamily": "Khand",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/khand-v22-latin/khand-v22-latin-regular.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Khand",
+              "fontWeight": "500",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/khand-v22-latin/khand-v22-latin-500.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Khand",
+              "fontWeight": "600",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/khand-v22-latin/khand-v22-latin-600.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Khand",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./fonts/khand-v22-latin/khand-v22-latin-700.woff2"
+              ]
+            }
+          ]
+        }
+      ],
       "fontSizes": [
         {
           "name": "Display",
