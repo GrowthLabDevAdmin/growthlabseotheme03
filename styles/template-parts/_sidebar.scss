@@ -69,7 +69,7 @@
             color: rgb(var(--primary-dark));
           }
 
-          &:not(.accordion__heading) {
+          &:not(.accordion__heading)::after {
             content: "\276F";
           }
         }
