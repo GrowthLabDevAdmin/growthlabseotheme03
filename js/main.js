@@ -252,6 +252,8 @@ function toggleAccordion(e) {
   const content = header.nextElementSibling;
   const inner = content.querySelector(".accordion__inner");
 
+  e.preventDefault();
+
   header.closest(".accordion").classList.toggle("open");
 
   if (content.style.maxHeight) {
