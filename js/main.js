@@ -27,12 +27,13 @@ requestAnimationFrame(() => {
 });
 
 blocksInContent && extractBlocks();
-accordionSidebarItems && sidebarAccordion();
 
 document.addEventListener("DOMContentLoaded", () => {
   showMenus();
   footerOfficesSelector();
   eventListeners();
+
+  accordionSidebarItems && sidebarAccordion();
 
   document.querySelectorAll(".sidebar").forEach((el) => {
     if (!el.querySelector("*")) el.classList.add("is-empty");
