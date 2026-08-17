@@ -64,10 +64,13 @@
           font-weight: 700;
 
           &::after {
-            content: "\276F";
             font-size: 16px;
             display: block;
             color: rgb(var(--primary-dark));
+          }
+
+          &:not(.accordion__heading) {
+            content: "\276F";
           }
         }
       }

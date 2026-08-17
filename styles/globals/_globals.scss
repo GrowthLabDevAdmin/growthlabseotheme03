@@ -393,9 +393,9 @@ img.bg-image {
   & > &__heading,
   & &__heading {
     &::after {
-      content: "\002B" !important;
-      width: var(--sp-sm) !important;
-      display: block !important;
+      content: "\002B";
+      width: var(--sp-sm);
+      display: block;
       font-size: var(--sp-sm);
       color: rgb(var(--tertiary));
       transition: all 0.3s ease-in-out;
