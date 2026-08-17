@@ -64,7 +64,8 @@
           font-weight: 700;
 
           &::after {
-            font-size: 16px;
+            width: 20px;
+            font-size: 20px;
             display: block;
             color: rgb(var(--primary-dark));
           }
