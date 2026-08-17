@@ -56,6 +56,7 @@
         a {
           width: 100%;
           padding: var(--sp-xsm);
+          position: relative;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -65,6 +66,10 @@
 
           &::after {
             width: 20px;
+            position: absolute;
+            top: 16px;
+            right: -36px;
+            z-index: 2;
             font-size: 20px;
             display: block;
             color: rgb(var(--primary-dark));
