@@ -11,6 +11,9 @@ const blocksInContent = document.querySelectorAll(
 );
 
 const accordionItems = document.querySelectorAll(".accordion");
+const accordionSidebarItems = document.querySelectorAll(
+  ".sidebar .menu .menu-item-has-children",
+);
 
 //Breakpoints
 const mobile = 480;
@@ -24,6 +27,7 @@ requestAnimationFrame(() => {
 });
 
 blocksInContent && extractBlocks();
+accordionSidebarItems && sidebarAccordion();
 
 document.addEventListener("DOMContentLoaded", () => {
   showMenus();
@@ -118,6 +122,16 @@ function handleSubMenuClick(e) {
 function removeSubmenuActiveClasses() {
   parentMenuItems.forEach((item) => {
     item.classList.remove("active");
+  });
+}
+
+//Sidebar Accordion
+function sidebarAccordion() {
+  accordionSidebarItems.forEach((item) => {
+    item.classList.add("accordion");
+    item.firstElementChild.classList.add("accordion__heading");
+    item.lastElementChild.classList.add("accordion__inner");
+    item.lastElementChild.outerHTML = `<div class="accordion__content">${item.lastElementChild.innerHTML}</div>`;
   });
 }
 
