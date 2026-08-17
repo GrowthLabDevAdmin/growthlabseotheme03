@@ -130,7 +130,7 @@ function sidebarAccordion() {
     item.classList.add("accordion");
     item.firstElementChild.classList.add("accordion__heading");
     item.lastElementChild.classList.add("accordion__inner");
-    item.lastElementChild.outerHTML = `<div class="accordion__content">${item.lastElementChild.innerHTML}</div>`;
+    item.lastElementChild.outerHTML = `<div class="accordion__content">${item.lastElementChild.outerHTML}</div>`;
   });
 }
 
