@@ -393,7 +393,7 @@ img.bg-image {
   & > &__heading,
   & &__heading {
     &::after {
-      content: "\002B";
+      content: "\002B" !important;
       width: var(--sp-sm);
       display: block;
       font-size: var(--sp-sm);
