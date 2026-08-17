@@ -70,13 +70,15 @@
             top: 16px;
             right: 16px;
             z-index: 2;
-            font-size: 20px;
             display: block;
+            font-size: 25px;
+            text-align: center;
             color: rgb(var(--primary-dark));
           }
 
           &:not(.accordion__heading)::after {
             content: "\276F";
+            font-size: 20px;
           }
         }
       }

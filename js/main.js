@@ -9,8 +9,6 @@ const pageInner = document.querySelector(".page-template-default .page__inner");
 const blocksInContent = document.querySelectorAll(
   ".page-template-default .page__main .block[data-extract]",
 );
-
-const accordionItems = document.querySelectorAll(".accordion");
 const accordionSidebarItems = document.querySelectorAll(
   ".sidebar .menu .menu-item-has-children",
 );
@@ -26,14 +24,13 @@ requestAnimationFrame(() => {
   findConsecutiveGroups();
 });
 
+accordionSidebarItems && sidebarAccordion();
 blocksInContent && extractBlocks();
 
 document.addEventListener("DOMContentLoaded", () => {
   showMenus();
   footerOfficesSelector();
   eventListeners();
-
-  accordionSidebarItems && sidebarAccordion();
 
   document.querySelectorAll(".sidebar").forEach((el) => {
     if (!el.querySelector("*")) el.classList.add("is-empty");
@@ -57,6 +54,7 @@ function eventListeners() {
   if (document.querySelector(".site-header--sticky"))
     window.addEventListener("scroll", fadeInHeader);
 
+  let accordionItems = document.querySelectorAll(".accordion");
   if (accordionItems) {
     accordionItems.forEach((item) => {
       item
