@@ -310,6 +310,16 @@ function growthlabseotheme03_scripts()
         'url' => get_template_directory_uri() . '/js/vendor/splide/splide-min.js',
     ]);
 
+    // Add inline script to initialize IMask for phone inputs
+    wp_enqueue_script('imask', get_template_directory_uri() . '/js/vendor/imask/imask-min.js', array(), filemtime(get_template_directory() . '/js/vendor/imask/imask-min.js'), true);
+    wp_add_inline_script('imask', "
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.ginput_container_phone input').forEach(function(input) {
+                IMask(input, { mask: '(000) 000-0000' });
+            });
+        });
+    ");
+
     // Load specific template stylesheet
     if (is_page() || is_single()) {
         if (!is_page_template('page-templates/template-full-width.php')) {
